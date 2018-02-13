@@ -12,6 +12,9 @@
 
   </head>
   <body>
+    <?php
+      echo "test";
+    ?>
 
     <footer>
       <p>&copy;2018 Emily Wing</p>

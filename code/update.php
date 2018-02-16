@@ -11,6 +11,14 @@
       include "inc/headerNav.php";
 
       try {
+        $query = "UPDATE hero SET name = 'Ororo Munroe' WHERE name = 'Storm'";
+        $conn->exec($query);
+
+        $queryUpdate = "SELECT * FROM hero";
+        foreach ($conn->query($queryUpdate) as $val) {
+          echo "<h1>" . $val["name"] . "</h1>";
+        }
+
 
         // $query = "INSERT INTO hero (name) VALUES('" . $REQUEST['heroName'] . "')";
         // $conn->exec($query);

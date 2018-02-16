@@ -5,6 +5,7 @@
   }
 
   html {
+    background-color: #000;
     box-sizing: border-box;
     font-family: "PT Sans", Arial, sans-serif;
   }
@@ -17,4 +18,94 @@
   img {
     max-width: 100%;
     image-rendering: -webkit-optimize-contrast; /* fix chrome's image sharpness per: https://medium.freecodecamp.org/-898b38a6c0e1 */
+  }
+
+  h1 {
+    margin: 25% 0 5%;
+    font: normal 5rem/1 Times, serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    margin: 0 auto;
+    position: relative;
+    max-width: 75%;
+    height: 100vh;
+    background-color: #fefefe;
+    text-align: center;
+  }
+  footer {
+    padding: 0.5rem 0;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 0.25rem solid #cd9b1d;
+    background-color: #eec900;
+    color: #8b6914;
+    text-align: center;
+  }
+
+/* nav */
+  nav {
+    margin-bottom: 2rem;
+    border-bottom: 0.25rem solid #cd9b1d;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    background-color: #eec900;
+    text-align: center;
+    list-style-type: none;
+  }
+  nav li {
+    padding: 0.75rem 1rem;
+    flex: 1 100%;
+    align-self: stretch;
+  }
+  nav li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #8b6914;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+/* forms */
+  form {
+    margin: 0 auto;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+  }
+  input[type=text] {
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    width: 100%;
+    display: inline-block;
+    border: 0.25rem solid #086D7B;
+    border-radius: 0.25rem;
+  }
+  input[type=submit] {
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    width: 15rem;
+    display: inline-block;
+    background-color: #004d73;
+    border: 0.25rem solid #00334e;
+    border-radius: 0.25rem;
+    color: #dbebfa;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  nav li:hover,
+  input[type=submit]:hover {
+    background-color: #007fbd;
   }

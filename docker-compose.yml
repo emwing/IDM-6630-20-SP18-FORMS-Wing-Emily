@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  database:
+    image: mysql:5.7
+    container_name: WING-Emily-DB
+    restart: always
+    expose:
+      - "3306"
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: idm6630
+      MYSQL_DATABASE: week03
+      MYSQL_USER: idm6630
+      MYSQL_PASSWORD: idm6630
+
+  php:
+    container_name: WING-Emily-PHP
+    build:
+      context: .
+      dockerfile: Dockerfile-php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./code:/var/www/html/
+    depends_on:
+      - database
+
+  phpmyadmin:
+    image:phpmyadmin/phpmyadmin:latest
+    container_name: WING-Emily-PHPMYADMIN
+    ports:
+      - "8181:80"
+    restart: always
+    environment:
+      PMA_PORT: 3306
+      PMA_HOST: database
+    depends_on:
+      - database

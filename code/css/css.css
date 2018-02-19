@@ -5,7 +5,6 @@
   }
 
   html {
-    background-color: #000;
     box-sizing: border-box;
     font-family: "PT Sans", Arial, sans-serif;
   }
@@ -19,93 +18,134 @@
     max-width: 100%;
     image-rendering: -webkit-optimize-contrast; /* fix chrome's image sharpness per: https://medium.freecodecamp.org/-898b38a6c0e1 */
   }
-
-  h1 {
-    margin: 25% 0 5%;
-    font: normal 5rem/1 Times, serif;
-  }
-
   a {
+    color: #A5B6D9;
     text-decoration: none;
   }
+  a:hover { color: #D5DEF0; }
+
 
   body {
-    margin: 0 auto;
     position: relative;
-    max-width: 75%;
+    width: 100%;
     height: 100vh;
     background-color: #fefefe;
+  }
+  .pageWrap {
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  header {
+    padding: 1.5rem;
+    flex: 1 100%;
+    text-align: center;
+  }
+  h1 {
+    margin: 0 auto;
+    font-size: 3rem;
+  }
+  h2 {
+    padding: 1rem;
+    margin: 0 auto;
+    border: 0.0625rem solid #696D7D;
+    background-color: #696D7D;
+    color: #fff;
     text-align: center;
   }
   footer {
-    padding: 0.5rem 0;
-    margin: 0 auto;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-top: 0.25rem solid #cd9b1d;
-    background-color: #eec900;
-    color: #8b6914;
-    text-align: center;
-  }
-
-/* nav */
-  nav {
-    margin-bottom: 2rem;
-    border-bottom: 0.25rem solid #cd9b1d;
-  }
-  nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    background-color: #eec900;
-    text-align: center;
-    list-style-type: none;
-  }
-  nav li {
-    padding: 0.75rem 1rem;
+    padding: 1rem 0;
     flex: 1 100%;
-    align-self: stretch;
+    text-align: center;
   }
-  nav li a {
+
+
+/* left side forms */
+  #formSection,
+  #siteList {
+    position: relative;
+    flex: 1 50%;
+  }
+
+  #insertForm,
+  #updateForm { margin: 0 auto; }
+
+  #insertForm input[type=text],
+  #updateForm input[type=text] {
+    padding: 1rem;
     width: 100%;
-    height: 100%;
     display: block;
-    color: #8b6914;
-    font-size: 0.875rem;
+    border: 0.0625rem solid #696D7D;
+  }
+
+  #insertButton,
+  #updateButton {
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    display: block;
+    border: 0.0625rem solid #696D7D;
+    font-size: 1.25rem;
     font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #insertButton {
+    background-color: #68B0AB;
+    color: #fff;
+  }
+  #insertButton:hover { background-color: #277a74; }
+  #updateButton {
+    background-color: #FFDB97;
+    color: #fff;
+  }
+  #updateButton:hover { background-color: #ECBF6A; }
+
+/* right side */
+  #siteList { padding-left: 1rem; }
+  h3,
+  h4 {
+    margin: 0 auto;
+    background-color: #696D7D;
+  }
+  h3 {
+    padding: 1rem 0.5rem 0;
+    font: bold 1.5rem/1 "PT Sans", Arial, sans-serif;
+  }
+  h4 {
+    padding: 0.5rem 1rem 1rem;
+    color: #fff;
+    font: bold 1.25rem/1 "PT Sans", Arial, sans-serif;
+  }
+
+  .siteBlocks {
+    margin-bottom: 1rem;
+    width: 60%;
+    border: 0.0625rem solid #696D7D;
+    text-align: center;
+  }
+  .siteForms {
+    width: 25%;
+    display: inline-block;
+  }
+  .siteButtons {
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0;
+    width: 95%;
+    border: 0.0625rem solid #696D7D;
+    font-size: 1.125rem;
+    text-align: center;
     text-transform: uppercase;
   }
 
-/* forms */
-  form {
-    margin: 0 auto;
-    display: inline-block;
-    width: 25%;
-    text-align: center;
+  #editButton {
+    background-color: #FFDB97;
+    color: #fff;
   }
-  input[type=text] {
-    padding: 1rem 2rem;
-    margin: 1rem auto;
-    width: 100%;
-    display: inline-block;
-    border: 0.25rem solid #086D7B;
-    border-radius: 0.25rem;
+  #editButton:hover { background-color: #ECBF6A; }
+  #deleteButton {
+    background-color: #FB959A;
+    color: #fff;
   }
-  input[type=submit] {
-    padding: 1rem 2rem;
-    margin: 1rem auto;
-    width: 15rem;
-    display: inline-block;
-    background-color: #004d73;
-    border: 0.25rem solid #00334e;
-    border-radius: 0.25rem;
-    color: #dbebfa;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-  }
-  nav li:hover,
-  input[type=submit]:hover {
-    background-color: #007fbd;
-  }
+  #deleteButton:hover { background-color: #C33E45; }
